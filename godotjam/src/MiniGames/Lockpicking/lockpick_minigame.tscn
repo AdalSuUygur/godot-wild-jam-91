@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b0fwx1tnk0rij"]
+
+[ext_resource type="Script" uid="uid://c5ycb18bigcye" path="res://lockpick.gd" id="1_buwar"]
+[ext_resource type="AudioStream" uid="uid://ccf0dnuwpta46" path="res://src/MiniGames/Lockpicking/door_unlocked.wav" id="2_ef06s"]
+[ext_resource type="AudioStream" uid="uid://c6o6ou53halhk" path="res://src/MiniGames/Lockpicking/metal_snap.wav" id="3_cctqf"]
+[ext_resource type="AudioStream" uid="uid://p4v7xkegr4yh" path="res://src/MiniGames/Lockpicking/lockpicking.wav" id="4_cctqf"]
+
+[node name="LockpickMinigame" type="Node2D" unique_id=53394269]
+script = ExtResource("1_buwar")
+
+[node name="KeyholePivot" type="Node2D" parent="." unique_id=1455336974]
+
+[node name="KeyholeVisual" type="Polygon2D" parent="KeyholePivot" unique_id=936201526]
+color = Color(0.35956925, 0.8331609, 0.60440713, 1)
+polygon = PackedVector2Array(50, 0, 35, 35, 0, 50, -35, 35, -50, 0, -35, -35, 0, -50, 35, -35)
+
+[node name="LockpickPivot" type="Node2D" parent="." unique_id=527840655]
+
+[node name="LockpickVisual" type="Polygon2D" parent="LockpickPivot" unique_id=622255242]
+color = Color(0.84433526, 0.6643319, 0.31101462, 1)
+polygon = PackedVector2Array(-5, 0, 5, 0, 5, -80, -5, -80)
+
+[node name="SoundBreak" type="AudioStreamPlayer2D" parent="." unique_id=662171445]
+stream = ExtResource("3_cctqf")
+
+[node name="SoundMove" type="AudioStreamPlayer2D" parent="." unique_id=1910690994]
+stream = ExtResource("4_cctqf")
+
+[node name="SoundUnlock" type="AudioStreamPlayer2D" parent="." unique_id=1261790835]
+stream = ExtResource("2_ef06s")
