@@ -180,62 +180,32 @@ Bir ibre döner.
 
 Oyuncu doğru anda tuşa basar.
 
-Yanlış zamanlama:
-
-```
-suspicion +10
-```
-
 ### 2. Combination Dial
 
 Kasa kilidi döndürülür.
 
 Doğru kombinasyon bulunur.
 
-### 3. Wire Cutting
-
-Oyuncu doğru kabloyu kesmelidir.
-
-Yanlış kablo:
-
-```
-alarm noise
-```
-
-### 4. Memory Pattern
-
-Kısa süre semboller gösterilir.
-
-Oyuncu tekrar eder.
-
-### 5. Sound Lock
-
-Klik sesi duyulduğunda tuşa basılır.
-
-### 6. Rotating Rings Puzzle
+### 3. Rotating Rings Puzzle
 
 Halkalar döndürülerek semboller hizalanır.
 
-### 7. Pressure Meter
+### 4. Pressure Meter
 
 Basınç göstergesi doğru aralıkta tutulur.
 
-### 8. Pin Alignment
+### 5. Pin Alignment
 
 Kilitteki pinler doğru hizalanır.
 
-### 9. Circuit Connect
+### 6. Circuit Connect
 
 Elektrik devresi doğru bağlanır.
 
-### 10. Button Sequence
+### 7. Button Sequence
 
 Doğru tuş sırası bulunur.
 
-### 11. Shape Matching
+### 8. Shape Matching
 
 Semboller doğru yuvalara yerleştirilir.
-
-### 12. Code Fragment
-
-Odada bulunan ipuçlarıyla kasa kodu çözülür.
