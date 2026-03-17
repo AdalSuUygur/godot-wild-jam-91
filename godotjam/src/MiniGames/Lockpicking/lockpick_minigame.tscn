@@ -18,6 +18,7 @@ polygon = PackedVector2Array(50, 0, 35, 35, 0, 50, -35, 35, -50, 0, -35, -35, 0,
 
 [node name="LockpickVisual" type="Polygon2D" parent="LockpickPivot" unique_id=622255242]
 color = Color(0.84433526, 0.6643319, 0.31101462, 1)
+texture_offset = Vector2(6.48, 74.755)
 polygon = PackedVector2Array(-5, 0, 5, 0, 5, -80, -5, -80)
 
 [node name="SoundBreak" type="AudioStreamPlayer2D" parent="." unique_id=662171445]

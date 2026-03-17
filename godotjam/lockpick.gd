@@ -24,7 +24,7 @@ var lockpick_spot: float = 0.0
 var break_timer:   float = 0.0
 var is_breaking:   bool  = false
 var shake_time:    float = 0.0
-var pressure_time: float = 0.0  # sweet spot dışında D basılı tutma süresi
+var pressure_time: float = 0.0  
 
 signal unlocked
 signal lockpick_broken
@@ -69,12 +69,12 @@ func _handle_keyhole(delta: float) -> void:
 		keyhole_pivot.rotation_degrees += keyhole_speed * closeness * delta
 
 		if outside_sweet_spot:
-			# Basılı tutma süresini artır
+			
 			pressure_time += delta
-			# Sallantı efekti
+			
 			shake_time += delta
 			lockpick_pivot.rotation_degrees += sin(shake_time * 25.0) * 1.5
-			# 1 saniye basılı tutarsa kırılır
+			
 			if pressure_time >= 1.0:
 				_start_breaking()
 				return
@@ -111,7 +111,7 @@ func _reset_lockpick() -> void:
 	shake_time = 0.0
 	pressure_time = 0.0
 	_place_sweet_spot()
-	sound_move.play()  # yeni denemede tekrar çal
+	sound_move.play()  
 
 func _place_sweet_spot() -> void:
 	var rng := RandomNumberGenerator.new()
