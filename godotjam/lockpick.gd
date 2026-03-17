@@ -4,6 +4,7 @@ class_name Lockpick2D extends Node2D
 @export var sensitivity: float = 0.3
 @export var keyhole_speed: float = 120.0
 @export var sweet_spot_range: float = 15.0
+@export var max_breaks: int = 3
 
 @onready var lockpick_pivot: Node2D            = $LockpickPivot
 @onready var keyhole_pivot: Node2D             = $KeyholePivot
@@ -24,19 +25,19 @@ var lockpick_spot: float = 0.0
 var break_timer:   float = 0.0
 var is_breaking:   bool  = false
 var shake_time:    float = 0.0
-var pressure_time: float = 0.0  
+var pressure_time: float = 0.0
+var break_count:   int   = 0
 
 signal unlocked
 signal lockpick_broken
+signal out_of_picks
 
 func _ready() -> void:
 	position = get_viewport().get_visible_rect().size / 2
-	for child in $KeyholePivot.get_children():
-		child.position = Vector2.ZERO
-	for child in $LockpickPivot.get_children():
-		child.position = Vector2.ZERO
+	$KeyholePivot.get_node("KeyholeVisual").position = Vector2.ZERO
 	unlocked.connect(_on_unlocked)
 	lockpick_broken.connect(_on_lockpick_broken)
+	out_of_picks.connect(_on_out_of_picks)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	_place_sweet_spot()
 	lockpick_pivot.rotation_degrees = 0.0
@@ -69,12 +70,9 @@ func _handle_keyhole(delta: float) -> void:
 		keyhole_pivot.rotation_degrees += keyhole_speed * closeness * delta
 
 		if outside_sweet_spot:
-			
-			pressure_time += delta
-			
 			shake_time += delta
+			pressure_time += delta
 			lockpick_pivot.rotation_degrees += sin(shake_time * 25.0) * 1.5
-			
 			if pressure_time >= 1.0:
 				_start_breaking()
 				return
@@ -82,7 +80,6 @@ func _handle_keyhole(delta: float) -> void:
 			pressure_time = 0.0
 			shake_time = 0.0
 	else:
-		pressure_time = 0.0
 		shake_time = 0.0
 		keyhole_pivot.rotation_degrees = lerp(keyhole_pivot.rotation_degrees, 0.0, 8.0 * delta)
 
@@ -102,22 +99,25 @@ func _handle_breaking(delta: float) -> void:
 	lockpick_pivot.rotation_degrees += sin(break_timer * 40.0) * 3.0
 	if break_timer >= LOCKPICK_BREAK_TIME:
 		is_breaking = false
+		break_count += 1
 		lockpick_broken.emit()
-		_reset_lockpick()
+		if break_count >= max_breaks:
+			out_of_picks.emit()
+		else:
+			_reset_lockpick()
 
 func _reset_lockpick() -> void:
 	lockpick_pivot.rotation_degrees = 0.0
 	keyhole_pivot.rotation_degrees  = 0.0
 	shake_time = 0.0
-	pressure_time = 0.0
 	_place_sweet_spot()
-	sound_move.play()  
+	sound_move.play()
 
 func _place_sweet_spot() -> void:
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
 	sweet_spot = snappedf(rng.randf_range(0.0, max_range), 1.0)
-	print("Sweet spot: ", sweet_spot)
+	print("Sweet spot: ", sweet_spot, " | Kalan hak: ", max_breaks - break_count)
 
 func _on_unlocked() -> void:
 	is_unlocked = true
@@ -129,4 +129,11 @@ func _on_unlocked() -> void:
 func _on_lockpick_broken() -> void:
 	sound_move.stop()
 	sound_break.play()
-	print("İğne kırıldı — yeni deneme")
+	print("İğne kırıldı! Kalan hak: ", max_breaks - break_count)
+
+func _on_out_of_picks() -> void:
+	sound_move.stop()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	print("Tüm haklar bitti — ana menüye dön")
+	# TODO: Ana menü hazır olunca şu satırı aç:
+	# get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

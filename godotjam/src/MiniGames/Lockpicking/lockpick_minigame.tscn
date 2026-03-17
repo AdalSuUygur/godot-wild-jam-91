@@ -8,18 +8,44 @@
 [node name="LockpickMinigame" type="Node2D" unique_id=53394269]
 script = ExtResource("1_buwar")
 
+[node name="Background" type="ColorRect" parent="." unique_id=712630731]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+
 [node name="KeyholePivot" type="Node2D" parent="." unique_id=1455336974]
+position = Vector2(-6, -125)
+
+[node name="Keyhole" type="Polygon2D" parent="KeyholePivot" unique_id=1531491896]
+position = Vector2(6, 125)
+polygon = PackedVector2Array(-486, -194, -326, -391, 41, -434, 406, -298, 544, 62, 472, 309, 340, 439, 72, 497, -233, 485, -459, 342, -537, 58)
 
 [node name="KeyholeVisual" type="Polygon2D" parent="KeyholePivot" unique_id=936201526]
-color = Color(0.35956925, 0.8331609, 0.60440713, 1)
-polygon = PackedVector2Array(50, 0, 35, 35, 0, 50, -35, 35, -50, 0, -35, -35, 0, -50, 35, -35)
+color = Color(0.22745098, 0.22745098, 0.22745098, 1)
+polygon = PackedVector2Array(210, 0, 150, 150, 0, 210, -150, 150, -210, 0, -150, -150, 0, -210, 150, -150)
+
+[node name="KeyholeHole" type="Polygon2D" parent="KeyholePivot" unique_id=432107142]
+position = Vector2(-17.793694, 0)
+scale = Vector2(0.8710602, 1)
+color = Color(0.054573774, 0.054573774, 0.05457376, 1)
+polygon = PackedVector2Array(-74, 166, -138, 514, 211, 505, 94, 164)
+
+[node name="ScrewdriverVisual" type="Polygon2D" parent="KeyholePivot/KeyholeHole" unique_id=432204617]
+position = Vector2(182, 122)
+color = Color(0.54509807, 0.14509805, 0, 1)
+polygon = PackedVector2Array(-159, 291, 139.21053, 409, 117.398026, 454, -157, 315)
 
 [node name="LockpickPivot" type="Node2D" parent="." unique_id=527840655]
+position = Vector2(-6, -125)
 
 [node name="LockpickVisual" type="Polygon2D" parent="LockpickPivot" unique_id=622255242]
+position = Vector2(0.75000006, -2)
+scale = Vector2(0.56250006, 2.2142856)
 color = Color(0.84433526, 0.6643319, 0.31101462, 1)
 texture_offset = Vector2(6.48, 74.755)
-polygon = PackedVector2Array(-5, 0, 5, 0, 5, -80, -5, -80)
+polygon = PackedVector2Array(-12, 0, 12, 0, 12, -106.78169, 12, -210, -12, -210)
 
 [node name="SoundBreak" type="AudioStreamPlayer2D" parent="." unique_id=662171445]
 stream = ExtResource("3_cctqf")
