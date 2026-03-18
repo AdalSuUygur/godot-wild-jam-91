@@ -1,0 +1,376 @@
+[gd_scene format=3 uid="uid://cxma0d5xupyiy"]
+
+[ext_resource type="Script" uid="uid://2kbf442xaobk" path="res://src/MiniGames/SafeCracker/safe_cracker_minigame.gd" id="1_y06rb"]
+[ext_resource type="FontFile" uid="uid://b0oibfyqte5na" path="res://src/Fonts/PressStart2P-Regular.ttf" id="2_nvqgm"]
+[ext_resource type="Script" uid="uid://pa83ee86yktd" path="res://src/MiniGames/SafeCracker/dial_pivot.gd" id="3_nvqgm"]
+
+[sub_resource type="Theme" id="Theme_fy4mg"]
+default_font = ExtResource("2_nvqgm")
+default_font_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tceab"]
+bg_color = Color(0.05490196, 0.043137256, 0.019607844, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.22745098, 0.16470589, 0.05490196, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_nvqgm"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_fy4mg"]
+
+[node name="SafeCrackerMiniGame" type="Node2D" unique_id=692992973]
+script = ExtResource("1_y06rb")
+
+[node name="Background" type="ColorRect" parent="." unique_id=787874137]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.039215688, 0.039215688, 0.039215688, 1)
+
+[node name="SafePanel" type="ColorRect" parent="." unique_id=894549103]
+offset_left = 710.0
+offset_top = 220.0
+offset_right = 1210.0
+offset_bottom = 860.0
+theme = SubResource("Theme_fy4mg")
+color = Color(0.6666667, 0.06666667, 0.13333334, 0)
+
+[node name="VBox" type="VBoxContainer" parent="SafePanel" unique_id=381255638]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 480.0
+offset_bottom = 620.0
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="SafePanel/VBox" unique_id=483686457]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.83137256, 0.6431373, 0.29803923, 1)
+theme_override_font_sizes/font_size = 28
+text = "KASA KİLİDİ"
+horizontal_alignment = 1
+
+[node name="HintLabel" type="Label" parent="SafePanel/VBox" unique_id=315695678]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47843137, 0.38431373, 0.20784314, 1)
+theme_override_font_sizes/font_size = 13
+text = "Kadranı döndür · Doğru sayıyı bul"
+horizontal_alignment = 1
+
+[node name="SlotsRow" type="HBoxContainer" parent="SafePanel/VBox" unique_id=1093620927]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Slot0" type="PanelContainer" parent="SafePanel/VBox/SlotsRow" unique_id=2075455295]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tceab")
+
+[node name="VBox" type="VBoxContainer" parent="SafePanel/VBox/SlotsRow/Slot0" unique_id=1652657651]
+layout_mode = 2
+alignment = 1
+
+[node name="SlotLabel" type="Label" parent="SafePanel/VBox/SlotsRow/Slot0/VBox" unique_id=195804080]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.24313726, 0.101960786, 1)
+theme_override_font_sizes/font_size = 11
+text = "C1"
+horizontal_alignment = 1
+
+[node name="NumberLabel" type="Label" parent="SafePanel/VBox/SlotsRow/Slot0/VBox" unique_id=28402949]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78431374, 0.65882355, 0.41960785, 1)
+theme_override_font_sizes/font_size = 32
+text = "--"
+horizontal_alignment = 1
+
+[node name="Slot1" type="PanelContainer" parent="SafePanel/VBox/SlotsRow" unique_id=2119237431]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tceab")
+
+[node name="VBox" type="VBoxContainer" parent="SafePanel/VBox/SlotsRow/Slot1" unique_id=2084380661]
+layout_mode = 2
+alignment = 1
+
+[node name="SlotLabel" type="Label" parent="SafePanel/VBox/SlotsRow/Slot1/VBox" unique_id=2136813926]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.24313726, 0.101960786, 1)
+theme_override_font_sizes/font_size = 11
+text = "C2"
+horizontal_alignment = 1
+
+[node name="NumberLabel" type="Label" parent="SafePanel/VBox/SlotsRow/Slot1/VBox" unique_id=361887780]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78431374, 0.65882355, 0.41960785, 1)
+theme_override_font_sizes/font_size = 32
+text = "--"
+horizontal_alignment = 1
+
+[node name="Slot2" type="PanelContainer" parent="SafePanel/VBox/SlotsRow" unique_id=744957272]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tceab")
+
+[node name="VBox" type="VBoxContainer" parent="SafePanel/VBox/SlotsRow/Slot2" unique_id=2117586403]
+layout_mode = 2
+alignment = 1
+
+[node name="SlotLabel" type="Label" parent="SafePanel/VBox/SlotsRow/Slot2/VBox" unique_id=491540635]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.24313726, 0.101960786, 1)
+theme_override_font_sizes/font_size = 11
+text = "C3"
+horizontal_alignment = 1
+
+[node name="NumberLabel" type="Label" parent="SafePanel/VBox/SlotsRow/Slot2/VBox" unique_id=1680888256]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78431374, 0.65882355, 0.41960785, 1)
+theme_override_font_sizes/font_size = 32
+text = "--"
+horizontal_alignment = 1
+
+[node name="DotsRow" type="HBoxContainer" parent="SafePanel/VBox" unique_id=201764284]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Dot0" type="ColorRect" parent="SafePanel/VBox/DotsRow" unique_id=2036080988]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Dot1" type="ColorRect" parent="SafePanel/VBox/DotsRow" unique_id=48011635]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Dot2" type="ColorRect" parent="SafePanel/VBox/DotsRow" unique_id=541892146]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="DialArea" type="Control" parent="SafePanel/VBox" unique_id=1336930642]
+custom_minimum_size = Vector2(460, 280)
+layout_mode = 2
+
+[node name="DialPivot" type="Node2D" parent="SafePanel/VBox/DialArea" unique_id=400571007]
+position = Vector2(230, 140)
+script = ExtResource("3_nvqgm")
+
+[node name="Indicator" type="Polygon2D" parent="SafePanel/VBox/DialArea/DialPivot" unique_id=199847819]
+color = Color(0.78431374, 0.65882355, 0.41960785, 1)
+offset = Vector2(0, -100)
+polygon = PackedVector2Array(-8, 0, 8, 0, 0, -14)
+
+[node name="CenterLabel" type="Label" parent="SafePanel/VBox/DialArea/DialPivot" unique_id=1036550354]
+custom_minimum_size = Vector2(60, 40)
+offset_left = -30.0
+offset_top = -20.0
+offset_right = 10.0
+offset_bottom = 3.0
+theme_override_colors/font_color = Color(0.83137256, 0.6431373, 0.29803923, 1)
+theme_override_font_sizes/font_size = 36
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VibBars" type="HBoxContainer" parent="SafePanel/VBox" unique_id=925434663]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Bar0" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=241546069]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar1" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=538107059]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar2" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=1977486291]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar3" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=1114456312]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar4" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=53401325]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar5" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=1864819284]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar6" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=989094187]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar7" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=896869018]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar8" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=1514441572]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar9" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=1702400269]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar10" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=2054746899]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar11" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=698838229]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar12" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=1529679786]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar13" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=452066664]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar14" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=1800265296]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar15" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=2062737758]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar16" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=1187906665]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="Bar17" type="ColorRect" parent="SafePanel/VBox/VibBars" unique_id=1086386071]
+custom_minimum_size = Vector2(8, 4)
+layout_mode = 2
+color = Color(0.16470589, 0.11764706, 0.03137255, 1)
+
+[node name="ButtonsRow" type="HBoxContainer" parent="SafePanel/VBox" unique_id=1381925216]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ConfirmBtn" type="Button" parent="SafePanel/VBox/ButtonsRow" unique_id=938743674]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78431374, 0.65882355, 0.41960785, 1)
+theme_override_font_sizes/font_size = 13
+text = "KİLİTLE"
+
+[node name="ResetBtn" type="Button" parent="SafePanel/VBox/ButtonsRow" unique_id=1958597953]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78431374, 0.65882355, 0.41960785, 1)
+theme_override_font_sizes/font_size = 13
+text = "SIFIRLA"
+
+[node name="StepsLabel" type="Label" parent="SafePanel/VBox" unique_id=1849206000]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2901961, 0.21176471, 0.09411765, 1)
+theme_override_font_sizes/font_size = 11
+text = "Hamle: 0/5  ·  Adım: 1/3"
+horizontal_alignment = 1
+
+[node name="WinOverlay" type="ColorRect" parent="." unique_id=2029381850]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.8, 0, 0, 0.78431374)
+
+[node name="VBox" type="VBoxContainer" parent="WinOverlay" unique_id=956723487]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 440.0
+offset_right = 800.0
+offset_bottom = 480.0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="WinTitle" type="Label" parent="WinOverlay/VBox" unique_id=82694391]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42745098, 0.8, 0.3529412, 1)
+theme_override_font_sizes/font_size = 48
+text = "KASA AÇILDI"
+horizontal_alignment = 1
+
+[node name="WinSub" type="Label" parent="WinOverlay/VBox" unique_id=652083311]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47843137, 0.38431373, 0.20784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "İçinde ne olduğunu bil..."
+horizontal_alignment = 1
+
+[node name="ContinueBtn" type="Button" parent="WinOverlay/VBox" unique_id=452060026]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "DEVAM ET"
+
+[node name="FailOverlay" type="ColorRect" parent="." unique_id=1767126678]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.8, 0, 0, 0)
+
+[node name="VBox" type="VBoxContainer" parent="FailOverlay" unique_id=2058750522]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 440.0
+offset_right = 800.0
+offset_bottom = 480.0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="FailTitle" type="Label" parent="FailOverlay/VBox" unique_id=1742209086]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.2901961, 0.2901961, 1)
+theme_override_font_sizes/font_size = 32
+text = "KİLİT BOZULDU"
+horizontal_alignment = 1
+
+[node name="FailSub" type="Label" parent="FailOverlay/VBox" unique_id=1356763847]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47843137, 0.38431373, 0.20784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "Alarm veriyor — kaç!"
+horizontal_alignment = 1
+
+[node name="RetryBtn" type="Button" parent="FailOverlay/VBox" unique_id=1305130996]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "TEKRAR DENE"
+
+[node name="TickSound" type="AudioStreamPlayer" parent="." unique_id=1844926937]
+stream = SubResource("AudioStreamGenerator_nvqgm")
+
+[node name="BeepSound" type="AudioStreamPlayer" parent="." unique_id=1554446878]
+stream = SubResource("AudioStreamGenerator_fy4mg")
