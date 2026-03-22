@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://b1i8r1r5o7ujj"]
+
+[ext_resource type="FontFile" uid="uid://l3voiklcexhm" path="res://src/Fonts/04B_30__.TTF" id="1_gydc6"]
+[ext_resource type="Script" uid="uid://biousk2kgdr25" path="res://src/Scripts/menu_2.gd" id="1_ktkji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktkji"]
+bg_color = Color(0.6054838, 0.47490972, 0.3227859, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gydc6"]
+bg_color = Color(0.13319641, 0.13319641, 0.13319635, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.11858136, 0.11858142, 0.1185813, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m10fq"]
+bg_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
+border_color = Color(0.53303695, 0.53303665, 0.5330367, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekj1d"]
+bg_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
+border_color = Color(0.53303695, 0.53303665, 0.5330367, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c2e4"]
+bg_color = Color(0.13319641, 0.13319641, 0.13319635, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.11858136, 0.11858142, 0.1185813, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+shadow_size = 15
+
+[node name="Menu2" type="Control" unique_id=112870914]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ktkji")
+
+[node name="Panel" type="Panel" parent="." unique_id=227820037]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0174537, 1.0129155)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ktkji")
+
+[node name="1" type="Button" parent="." unique_id=282846378]
+layout_mode = 0
+offset_left = 842.0
+offset_top = 318.0
+offset_right = 980.0
+offset_bottom = 456.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gydc6")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_gydc6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m10fq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekj1d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3c2e4")
+text = "1"
+
+[node name="2" type="Button" parent="." unique_id=844858979]
+layout_mode = 0
+offset_left = 1283.0
+offset_top = 489.0
+offset_right = 1421.0
+offset_bottom = 638.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gydc6")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_gydc6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m10fq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekj1d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3c2e4")
+text = "2"
+
+[node name="3" type="Button" parent="." unique_id=297270810]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 731.0
+offset_right = 1102.0
+offset_bottom = 880.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gydc6")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_gydc6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m10fq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekj1d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3c2e4")
+text = "3"
+
+[connection signal="pressed" from="1" to="." method="_on__pressed"]

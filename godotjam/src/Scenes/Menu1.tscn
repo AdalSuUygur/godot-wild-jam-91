@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://k5o6d4adr1pi"]
+
+[ext_resource type="Script" uid="uid://5pcrdkpth4x8" path="res://src/Scripts/menu_1.gd" id="1_ujda0"]
+[ext_resource type="FontFile" uid="uid://l3voiklcexhm" path="res://src/Fonts/04B_30__.TTF" id="2_ujda0"]
+[ext_resource type="AudioStream" uid="uid://byv2dpslpxbd4" path="res://src/Music/335569__hmmm101__pixel-song-7.wav" id="3_mf5rx"]
+[ext_resource type="AudioStream" uid="uid://bem1sxsuahebe" path="res://src/Music/546974__finix473__ui_click.wav" id="4_e0ks8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujda0"]
+bg_color = Color(0.75158066, 0.628306, 0.38780716, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf5rx"]
+bg_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0ks8"]
+bg_color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63l4v"]
+bg_color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j1ny"]
+bg_color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4asph"]
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.78431374, 0.6627451, 0.43137255, 1)
+
+[node name="Menu1" type="Control" unique_id=1534109187]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ujda0")
+
+[node name="Panel" type="Panel" parent="." unique_id=177476831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ujda0")
+
+[node name="start" type="Button" parent="." unique_id=405621391]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 288.0
+offset_right = 1373.0
+offset_bottom = 448.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ujda0")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf5rx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e0ks8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_63l4v")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8j1ny")
+text = "Start"
+
+[node name="options" type="Button" parent="." unique_id=1712174776]
+layout_mode = 0
+offset_left = 971.0
+offset_top = 481.0
+offset_right = 1374.0
+offset_bottom = 641.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ujda0")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf5rx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e0ks8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_63l4v")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8j1ny")
+text = "Options
+"
+
+[node name="exit" type="Button" parent="." unique_id=787532611]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 671.0
+offset_right = 1375.0
+offset_bottom = 831.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ujda0")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf5rx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e0ks8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_63l4v")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8j1ny")
+text = "Exit"
+
+[node name="OptionsPanel" type="Panel" parent="." unique_id=2096456277]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4asph")
+
+[node name="CenterContainer" type="CenterContainer" parent="OptionsPanel" unique_id=676135597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsPanel/CenterContainer" unique_id=1648744086]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="AudioPanel" type="VBoxContainer" parent="OptionsPanel/CenterContainer/VBoxContainer" unique_id=1847137098]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="OptionsPanel/CenterContainer/VBoxContainer/AudioPanel" unique_id=1859270684]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="OptionsPanel/CenterContainer/VBoxContainer/AudioPanel" unique_id=1624068746]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Label2" type="Label" parent="OptionsPanel/CenterContainer/VBoxContainer/AudioPanel" unique_id=874755017]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="OptionsPanel/CenterContainer/VBoxContainer/AudioPanel" unique_id=1091940495]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+step = 0.01
+
+[node name="DisplayPanel" type="VBoxContainer" parent="OptionsPanel/CenterContainer/VBoxContainer" unique_id=406721039]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="FullscreenCheck" type="CheckButton" parent="OptionsPanel/CenterContainer/VBoxContainer/DisplayPanel" unique_id=165621716]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="ResolutionOption" type="OptionButton" parent="OptionsPanel/CenterContainer/VBoxContainer/DisplayPanel" unique_id=560037504]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="OptionsPanel" unique_id=712046794]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -60.0
+offset_right = -50.0
+offset_bottom = -29.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Close"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsPanel" unique_id=1263230021]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 1720.0
+offset_bottom = 300.0
+theme_override_constants/separation = 40
+
+[node name="Button" type="Button" parent="OptionsPanel/HBoxContainer" unique_id=626402232]
+layout_mode = 2
+text = "Audio"
+
+[node name="Button2" type="Button" parent="OptionsPanel/HBoxContainer" unique_id=1595811687]
+layout_mode = 2
+text = "Display"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=847827818]
+stream = ExtResource("3_mf5rx")
+autoplay = true
+bus = &"Music"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=636696280]
+stream = ExtResource("4_e0ks8")
+bus = &"SFX"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

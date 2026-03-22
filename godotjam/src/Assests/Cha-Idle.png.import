@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b616202rwfmy7"
-path="res://.godot/imported/block.png-28e3ecfe15edb880216682ecf1c86ef6.ctex"
+uid="uid://bhyyksxy7t6j0"
+path="res://.godot/imported/Cha-Idle.png-939d702823237ac0c94ac29c1dff9776.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Assests/block.png"
-dest_files=["res://.godot/imported/block.png-28e3ecfe15edb880216682ecf1c86ef6.ctex"]
+source_file="res://src/Assests/Cha-Idle.png"
+dest_files=["res://.godot/imported/Cha-Idle.png-939d702823237ac0c94ac29c1dff9776.ctex"]
 
 [params]
 

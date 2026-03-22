@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b616202rwfmy7"
-path="res://.godot/imported/block.png-28e3ecfe15edb880216682ecf1c86ef6.ctex"
+uid="uid://eq6f25px18gt"
+path="res://.godot/imported/kapı1.png-ff2d62730f7a74e457f3a5ae43c0eaf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Assests/block.png"
-dest_files=["res://.godot/imported/block.png-28e3ecfe15edb880216682ecf1c86ef6.ctex"]
+source_file="res://src/Assests/kapı1.png"
+dest_files=["res://.godot/imported/kapı1.png-ff2d62730f7a74e457f3a5ae43c0eaf9.ctex"]
 
 [params]
 

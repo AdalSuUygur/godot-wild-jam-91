@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cxma0d5xupyiy"]
 
-[ext_resource type="Script" uid="uid://2kbf442xaobk" path="res://src/MiniGames/SafeCracker/safe_cracker_minigame.gd" id="1_y06rb"]
+[ext_resource type="Script" uid="uid://2kbf442xaobk" path="res://src/Scripts/safe_cracker_minigame.gd" id="1_y06rb"]
 [ext_resource type="FontFile" uid="uid://b0oibfyqte5na" path="res://src/Fonts/PressStart2P-Regular.ttf" id="2_nvqgm"]
-[ext_resource type="Script" uid="uid://pa83ee86yktd" path="res://src/MiniGames/SafeCracker/dial_pivot.gd" id="3_nvqgm"]
+[ext_resource type="Script" uid="uid://pa83ee86yktd" path="res://src/Scripts/dial_pivot.gd" id="3_nvqgm"]
 
 [sub_resource type="Theme" id="Theme_fy4mg"]
 default_font = ExtResource("2_nvqgm")
@@ -52,14 +52,14 @@ theme_override_constants/separation = 12
 layout_mode = 2
 theme_override_colors/font_color = Color(0.83137256, 0.6431373, 0.29803923, 1)
 theme_override_font_sizes/font_size = 28
-text = "KASA KİLİDİ"
+text = "VAULT LOCK"
 horizontal_alignment = 1
 
 [node name="HintLabel" type="Label" parent="SafePanel/VBox" unique_id=315695678]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.47843137, 0.38431373, 0.20784314, 1)
 theme_override_font_sizes/font_size = 13
-text = "Kadranı döndür · Doğru sayıyı bul"
+text = "Rotate the dial · Find the correct number"
 horizontal_alignment = 1
 
 [node name="SlotsRow" type="HBoxContainer" parent="SafePanel/VBox" unique_id=1093620927]
@@ -286,19 +286,19 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.78431374, 0.65882355, 0.41960785, 1)
 theme_override_font_sizes/font_size = 13
-text = "KİLİTLE"
+text = "LOCK"
 
 [node name="ResetBtn" type="Button" parent="SafePanel/VBox/ButtonsRow" unique_id=1958597953]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.78431374, 0.65882355, 0.41960785, 1)
 theme_override_font_sizes/font_size = 13
-text = "SIFIRLA"
+text = "RESET"
 
 [node name="StepsLabel" type="Label" parent="SafePanel/VBox" unique_id=1849206000]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2901961, 0.21176471, 0.09411765, 1)
 theme_override_font_sizes/font_size = 11
-text = "Hamle: 0/5  ·  Adım: 1/3"
+text = "Moves: 0/5 · Step: 1/3"
 horizontal_alignment = 1
 
 [node name="WinOverlay" type="ColorRect" parent="." unique_id=2029381850]
@@ -320,20 +320,20 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.42745098, 0.8, 0.3529412, 1)
 theme_override_font_sizes/font_size = 48
-text = "KASA AÇILDI"
+text = "SAFE UNLOCKED"
 horizontal_alignment = 1
 
 [node name="WinSub" type="Label" parent="WinOverlay/VBox" unique_id=652083311]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.47843137, 0.38431373, 0.20784314, 1)
 theme_override_font_sizes/font_size = 12
-text = "İçinde ne olduğunu bil..."
+text = "Know what's inside..."
 horizontal_alignment = 1
 
 [node name="ContinueBtn" type="Button" parent="WinOverlay/VBox" unique_id=452060026]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
-text = "DEVAM ET"
+text = "CONTINUE"
 
 [node name="FailOverlay" type="ColorRect" parent="." unique_id=1767126678]
 visible = false
@@ -354,20 +354,20 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8, 0.2901961, 0.2901961, 1)
 theme_override_font_sizes/font_size = 32
-text = "KİLİT BOZULDU"
+text = "LOCK BROKEN"
 horizontal_alignment = 1
 
 [node name="FailSub" type="Label" parent="FailOverlay/VBox" unique_id=1356763847]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.47843137, 0.38431373, 0.20784314, 1)
 theme_override_font_sizes/font_size = 12
-text = "Alarm veriyor — kaç!"
+text = "ALARM TRIGGERED — RUN!"
 horizontal_alignment = 1
 
 [node name="RetryBtn" type="Button" parent="FailOverlay/VBox" unique_id=1305130996]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
-text = "TEKRAR DENE"
+text = "FINISH"
 
 [node name="TickSound" type="AudioStreamPlayer" parent="." unique_id=1844926937]
 stream = SubResource("AudioStreamGenerator_nvqgm")
