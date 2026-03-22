@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dr5ltjvwuap6i"]
+
+[ext_resource type="FontFile" uid="uid://b0oibfyqte5na" path="res://src/Fonts/PressStart2P-Regular.ttf" id="1_cg6qj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfreh"]
+size = Vector2(6, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7tvk"]
+size = Vector2(14, 44)
+
+[node name="Door" type="StaticBody2D" unique_id=1710282133]
+collision_layer = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=772470828]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=860027635]
+position = Vector2(221, -22)
+shape = SubResource("RectangleShape2D_hfreh")
+
+[node name="DoorArea" type="Area2D" parent="." unique_id=655661382]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea" unique_id=626244058]
+position = Vector2(217, -22)
+shape = SubResource("RectangleShape2D_r7tvk")
+debug_color = Color(0.88029015, 0.24817008, 0.58645505, 0.41960785)
+
+[node name="InteractLabel" type="Label" parent="." unique_id=1672472303]
+visible = false
+offset_left = 136.0
+offset_top = -42.0
+offset_right = 340.0
+offset_bottom = -19.0
+scale = Vector2(0.4230389, 0.7303828)
+theme_override_fonts/font = ExtResource("1_cg6qj")
+theme_override_font_sizes/font_size = 10
+text = "Press E to Unlock"

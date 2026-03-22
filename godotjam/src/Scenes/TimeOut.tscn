@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://crwh5q30byoks"]
+
+[ext_resource type="FontFile" uid="uid://l3voiklcexhm" path="res://src/Fonts/04B_30__.TTF" id="1_egd47"]
+[ext_resource type="Script" uid="uid://c6g1qmlqtl5od" path="res://src/time_out.gd" id="1_hd74i"]
+[ext_resource type="Texture2D" uid="uid://difnkuimy3g34" path="res://src/Assests/BG1.png" id="2_3isrt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hd74i"]
+bg_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3isrt"]
+bg_color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbjes"]
+bg_color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi0nd"]
+bg_color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[node name="Node2D" type="Node2D" unique_id=1231209651]
+script = ExtResource("1_hd74i")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1667644937]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_3isrt")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=1687136035]
+offset_left = 82.0
+offset_top = 227.0
+offset_right = 1859.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(0.96858436, 0.7646499, 0.27173513, 1)
+theme_override_fonts/font = ExtResource("1_egd47")
+theme_override_font_sizes/font_size = 256
+text = "Time's Up"
+
+[node name="Button" type="Button" parent="." unique_id=1602352295]
+offset_left = 769.0
+offset_top = 632.0
+offset_right = 1186.0
+offset_bottom = 792.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_egd47")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_hd74i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3isrt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lbjes")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wi0nd")
+text = "Continue"

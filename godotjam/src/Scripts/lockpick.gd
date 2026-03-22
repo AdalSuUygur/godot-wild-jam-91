@@ -138,4 +138,4 @@ func _on_out_of_picks() -> void:
 	Global.minigame_active = false
 	await get_tree().create_timer(1.0).timeout
 	get_parent().queue_free()
-	get_tree().change_scene_to_file("res://src/Scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://src/Scenes/GameOver.tscn")

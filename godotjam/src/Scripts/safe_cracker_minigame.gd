@@ -1,13 +1,13 @@
 extends Node2D
 
-# ── Sabitler ──────────────────────────────────────────────────────────────
+
 const NUMBER_COUNT := 40
 const MAX_ATTEMPTS := 5
 const TOTAL_STEPS := 3
 const MAX_RETRIES := 3
 const SNAP_TOLERANCE := 1
 
-# ── Durum değişkenleri ─────────────────────────────────────────────────────
+
 var combination: Array[int] = []
 var current_step := 0
 var locked_steps: Array[int] = []
@@ -20,7 +20,7 @@ var is_dragging := false
 var drag_start_angle := 0.0
 var dial_start_angle := 0.0
 
-# ── Node referansları ──────────────────────────────────────────────────────
+
 @onready var hint_label: Label = $SafePanel/VBox/HintLabel
 @onready var steps_label: Label = $SafePanel/VBox/StepsLabel
 @onready var slots_row: HBoxContainer = $SafePanel/VBox/SlotsRow
@@ -37,7 +37,7 @@ var dial_start_angle := 0.0
 @onready var tick_sound: AudioStreamPlayer = $TickSound
 @onready var beep_sound: AudioStreamPlayer = $BeepSound
 
-# ── Hazırlık ───────────────────────────────────────────────────────────────
+
 func _ready() -> void:
 	_new_combination()
 	confirm_btn.pressed.connect(_on_confirm)
@@ -49,7 +49,7 @@ func _ready() -> void:
 	beep_sound.play()
 	_render_all()
 
-# ── Kombinasyon ────────────────────────────────────────────────────────────
+
 func _new_combination() -> void:
 	combination.clear()
 	while combination.size() < TOTAL_STEPS:
@@ -57,7 +57,7 @@ func _new_combination() -> void:
 		if not combination.has(n):
 			combination.append(n)
 
-# ── Yardımcı fonksiyonlar ──────────────────────────────────────────────────
+
 func _angle_to_number(angle: float) -> int:
 	return int(round(fmod(angle, 360.0) / 360.0 * NUMBER_COUNT)) % NUMBER_COUNT
 
@@ -74,7 +74,7 @@ func _get_proximity() -> float:
 	var diff := mini(abs(current_number - target), NUMBER_COUNT - abs(current_number - target))
 	return 1.0 - float(diff) / float(NUMBER_COUNT / 2)
 
-# ── Kadran döndürme ────────────────────────────────────────────────────────
+
 func _rotate_dial(delta_deg: float) -> void:
 	var prev_number := current_number
 	dial_angle = fmod(dial_angle + delta_deg + 360.0, 360.0)
@@ -111,7 +111,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_accept"):
 		_on_confirm()
 
-# ── Onay ───────────────────────────────────────────────────────────────────
+
 func _on_confirm() -> void:
 	if locked_steps.size() >= TOTAL_STEPS:
 		return
@@ -132,7 +132,7 @@ func _on_confirm() -> void:
 			await get_tree().create_timer(0.5).timeout
 			Global.minigame_active = false
 			get_parent().queue_free()
-			get_tree().change_scene_to_file("res://src/Scenes/MainMenu.tscn")
+			get_tree().change_scene_to_file("res://src/Scenes/GameOver.tscn")
 
 func _on_reset_dial() -> void:
 	dial_angle = 0.0
@@ -149,7 +149,7 @@ func _on_retry() -> void:
 	if retries >= MAX_RETRIES:
 		Global.minigame_active = false
 		get_parent().queue_free()
-		get_tree().change_scene_to_file("res://src/Scenes/MainMenu.tscn")
+		get_tree().change_scene_to_file("res://src/Scenes/GameOver.tscn")
 		return
 	combination.clear()
 	current_step = 0
@@ -161,7 +161,7 @@ func _on_retry() -> void:
 	_new_combination()
 	_render_all()
 
-# ── Görsel güncelleme ──────────────────────────────────────────────────────
+
 func _render_all() -> void:
 	_update_dial_visuals()
 	_update_slots()
@@ -237,7 +237,7 @@ func _update_steps_label() -> void:
 		mini(current_step + 1, TOTAL_STEPS), TOTAL_STEPS
 	]
 
-# ── Ses ───────────────────────────────────────────────────────────────────
+
 func _play_tick() -> void:
 	var playback := tick_sound.get_stream_playback()
 	if playback == null:
@@ -265,7 +265,7 @@ func _play_beep(proximity: float) -> void:
 		var sample: float = sin(TAU * freq * t) * envelope * volume
 		playback.push_frame(Vector2(sample, sample))
 
-# ── Sarsma efekti ──────────────────────────────────────────────────────────
+
 func _shake() -> void:
 	var original := position
 	for i in 6:

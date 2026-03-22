@@ -49,7 +49,7 @@ func _ready() -> void:
 func _on_music_player_finished() -> void:
 	music_player.play()
 
-# --- Tab ---
+
 
 func _show_tab(tab: String) -> void:
 	audio_panel.visible   = (tab == "Audio")
@@ -57,7 +57,7 @@ func _show_tab(tab: String) -> void:
 	btn_audio.modulate    = Color("#c8a96e") if tab == "Audio"   else Color(0.5, 0.5, 0.5, 1)
 	btn_display.modulate  = Color("#c8a96e") if tab == "Display" else Color(0.5, 0.5, 0.5, 1)
 
-# --- Ana butonlar ---
+
 
 func _on_start_pressed() -> void:
 	sfx_player.play()
@@ -77,7 +77,7 @@ func _on_close_pressed() -> void:
 	_save_settings()
 	options_panel.hide()
 
-# --- Audio ---
+
 
 func _on_music_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(
@@ -91,7 +91,7 @@ func _on_sfx_changed(value: float) -> void:
 		linear_to_db(value)
 	)
 
-# --- Display ---
+
 
 func _setup_resolution_options() -> void:
 	resolution_option.clear()
@@ -108,7 +108,7 @@ func _on_resolution_selected(index: int) -> void:
 	if not fullscreen_check.button_pressed:
 		DisplayServer.window_set_size(RESOLUTIONS[index])
 
-# --- Font ---
+
 
 func _apply_font(node: Node, font: FontFile) -> void:
 	if node is Control:
@@ -117,7 +117,7 @@ func _apply_font(node: Node, font: FontFile) -> void:
 	for child in node.get_children():
 		_apply_font(child, font)
 
-# --- Save / Load ---
+
 
 func _save_settings() -> void:
 	var config = ConfigFile.new()

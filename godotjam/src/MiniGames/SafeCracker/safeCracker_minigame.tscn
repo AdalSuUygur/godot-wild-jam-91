@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://2kbf442xaobk" path="res://src/Scripts/safe_cracker_minigame.gd" id="1_y06rb"]
 [ext_resource type="FontFile" uid="uid://b0oibfyqte5na" path="res://src/Fonts/PressStart2P-Regular.ttf" id="2_nvqgm"]
 [ext_resource type="Script" uid="uid://pa83ee86yktd" path="res://src/Scripts/dial_pivot.gd" id="3_nvqgm"]
+[ext_resource type="FontFile" uid="uid://l3voiklcexhm" path="res://src/Fonts/04B_30__.TTF" id="4_fy4mg"]
 
 [sub_resource type="Theme" id="Theme_fy4mg"]
 default_font = ExtResource("2_nvqgm")
@@ -19,6 +20,46 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvqgm"]
+bg_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fy4mg"]
+bg_color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxqus"]
+bg_color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38h5v"]
+bg_color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 10
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_nvqgm"]
 
@@ -51,6 +92,7 @@ theme_override_constants/separation = 12
 [node name="TitleLabel" type="Label" parent="SafePanel/VBox" unique_id=483686457]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.83137256, 0.6431373, 0.29803923, 1)
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 28
 text = "VAULT LOCK"
 horizontal_alignment = 1
@@ -58,6 +100,7 @@ horizontal_alignment = 1
 [node name="HintLabel" type="Label" parent="SafePanel/VBox" unique_id=315695678]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.47843137, 0.38431373, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 13
 text = "Rotate the dial · Find the correct number"
 horizontal_alignment = 1
@@ -285,18 +328,21 @@ alignment = 1
 [node name="ConfirmBtn" type="Button" parent="SafePanel/VBox/ButtonsRow" unique_id=938743674]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.78431374, 0.65882355, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 13
 text = "LOCK"
 
 [node name="ResetBtn" type="Button" parent="SafePanel/VBox/ButtonsRow" unique_id=1958597953]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.78431374, 0.65882355, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 13
 text = "RESET"
 
 [node name="StepsLabel" type="Label" parent="SafePanel/VBox" unique_id=1849206000]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2901961, 0.21176471, 0.09411765, 1)
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 11
 text = "Moves: 0/5 · Step: 1/3"
 horizontal_alignment = 1
@@ -305,20 +351,22 @@ horizontal_alignment = 1
 visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.8, 0, 0, 0.78431374)
+color = Color(0.67110145, 0.0891423, 0.2223796, 0.92156863)
 
 [node name="VBox" type="VBoxContainer" parent="WinOverlay" unique_id=956723487]
 layout_mode = 0
-offset_left = 760.0
-offset_top = 440.0
-offset_right = 800.0
-offset_bottom = 480.0
+offset_left = 514.0
+offset_top = 407.0
+offset_right = 1093.0
+offset_bottom = 525.0
+scale = Vector2(1.6120838, 2.100586)
 theme_override_constants/separation = 16
 alignment = 1
 
 [node name="WinTitle" type="Label" parent="WinOverlay/VBox" unique_id=82694391]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.42745098, 0.8, 0.3529412, 1)
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 48
 text = "SAFE UNLOCKED"
 horizontal_alignment = 1
@@ -326,33 +374,41 @@ horizontal_alignment = 1
 [node name="WinSub" type="Label" parent="WinOverlay/VBox" unique_id=652083311]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.47843137, 0.38431373, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 12
 text = "Know what's inside..."
 horizontal_alignment = 1
 
 [node name="ContinueBtn" type="Button" parent="WinOverlay/VBox" unique_id=452060026]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_nvqgm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fy4mg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bxqus")
+theme_override_styles/focus = SubResource("StyleBoxFlat_38h5v")
 text = "CONTINUE"
 
 [node name="FailOverlay" type="ColorRect" parent="." unique_id=1767126678]
 visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.8, 0, 0, 0)
+color = Color(0.19607843, 0.1764706, 0.08235294, 0.8039216)
 
 [node name="VBox" type="VBoxContainer" parent="FailOverlay" unique_id=2058750522]
 layout_mode = 0
-offset_left = 760.0
-offset_top = 440.0
-offset_right = 800.0
-offset_bottom = 480.0
+offset_left = 573.00006
+offset_top = 373.0
+offset_right = 899.00006
+offset_bottom = 477.0
+scale = Vector2(2.4339042, 2.4339042)
 theme_override_constants/separation = 16
 alignment = 1
 
 [node name="FailTitle" type="Label" parent="FailOverlay/VBox" unique_id=1742209086]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8, 0.2901961, 0.2901961, 1)
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 32
 text = "LOCK BROKEN"
 horizontal_alignment = 1
@@ -360,12 +416,14 @@ horizontal_alignment = 1
 [node name="FailSub" type="Label" parent="FailOverlay/VBox" unique_id=1356763847]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.47843137, 0.38431373, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 12
 text = "ALARM TRIGGERED — RUN!"
 horizontal_alignment = 1
 
 [node name="RetryBtn" type="Button" parent="FailOverlay/VBox" unique_id=1305130996]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fy4mg")
 theme_override_font_sizes/font_size = 13
 text = "FINISH"
 

@@ -5,16 +5,16 @@ const NUMBER_COUNT := 40
 func _draw() -> void:
 	var radius := 100.0
 	
-	# Dış çember
+
 	draw_arc(Vector2.ZERO, radius, 0, TAU, 64, Color("#5a3e1a"), 2.0)
 	
-	# İç çember
+
 	draw_arc(Vector2.ZERO, radius - 20.0, 0, TAU, 64, Color("#3a2a0e"), 1.0)
 	
-	# Yüz dolgusu
+
 	draw_circle(Vector2.ZERO, radius - 22.0, Color("#120e04"))
 	
-	# Tick işaretleri ve sayılar
+
 	for i in NUMBER_COUNT:
 		var angle := (float(i) / NUMBER_COUNT) * TAU - PI / 2.0
 		var is_major := i % 5 == 0
@@ -24,6 +24,6 @@ func _draw() -> void:
 		var to := Vector2(cos(angle), sin(angle)) * tick_out
 		draw_line(from, to, Color("#c8a86b") if is_major else Color("#4a3618"), 1.5 if is_major else 0.8)
 	
-	# Merkez nokta
+
 	draw_circle(Vector2.ZERO, 8.0, Color("#3a2a0e"))
 	draw_circle(Vector2.ZERO, 4.0, Color("#c8a86b"))

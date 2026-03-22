@@ -2,9 +2,10 @@
 
 [ext_resource type="FontFile" uid="uid://l3voiklcexhm" path="res://src/Fonts/04B_30__.TTF" id="1_gydc6"]
 [ext_resource type="Script" uid="uid://biousk2kgdr25" path="res://src/Scripts/menu_2.gd" id="1_ktkji"]
+[ext_resource type="Texture2D" uid="uid://c4s0gfc3u1gcf" path="res://src/Assests/BG4.png" id="2_m10fq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktkji"]
-bg_color = Color(0.6054838, 0.47490972, 0.3227859, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekj1d"]
+texture = ExtResource("2_m10fq")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gydc6"]
 bg_color = Color(0.13319641, 0.13319641, 0.13319635, 1)
@@ -67,14 +68,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0174537, 1.0129155)
-theme_override_styles/panel = SubResource("StyleBoxFlat_ktkji")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ekj1d")
 
 [node name="1" type="Button" parent="." unique_id=282846378]
 layout_mode = 0
-offset_left = 842.0
-offset_top = 318.0
-offset_right = 980.0
-offset_bottom = 456.0
+offset_left = 448.0
+offset_top = 129.0
+offset_right = 586.0
+offset_bottom = 278.0
+scale = Vector2(1.5215498, 1.5215498)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -88,10 +90,11 @@ text = "1"
 
 [node name="2" type="Button" parent="." unique_id=844858979]
 layout_mode = 0
-offset_left = 1283.0
-offset_top = 489.0
-offset_right = 1421.0
-offset_bottom = 638.0
+offset_left = 1309.0001
+offset_top = 192.0
+offset_right = 1449.0001
+offset_bottom = 341.0
+scale = Vector2(1.5215498, 1.5215498)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -103,12 +106,24 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ekj1d")
 theme_override_styles/focus = SubResource("StyleBoxFlat_3c2e4")
 text = "2"
 
+[node name="Label" type="Label" parent="2" unique_id=523958257]
+layout_mode = 0
+offset_left = -22.345718
+offset_top = -63.093563
+offset_right = 188.65428
+offset_bottom = 193.90643
+theme_override_colors/font_color = Color(0.93333334, 0.23921569, 0.41960785, 0.9019608)
+theme_override_fonts/font = ExtResource("1_gydc6")
+theme_override_font_sizes/font_size = 256
+text = "x"
+
 [node name="3" type="Button" parent="." unique_id=297270810]
 layout_mode = 0
-offset_left = 964.0
-offset_top = 731.0
-offset_right = 1102.0
-offset_bottom = 880.0
+offset_left = 1043.0
+offset_top = 580.0
+offset_right = 1183.0
+offset_bottom = 729.0
+scale = Vector2(1.5215498, 1.5215498)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -119,5 +134,34 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_m10fq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ekj1d")
 theme_override_styles/focus = SubResource("StyleBoxFlat_3c2e4")
 text = "3"
+
+[node name="Label" type="Label" parent="3" unique_id=2038943352]
+layout_mode = 0
+offset_left = -22.345718
+offset_top = -63.093563
+offset_right = 188.65428
+offset_bottom = 193.90643
+theme_override_colors/font_color = Color(0.93333334, 0.23921569, 0.41960785, 0.9019608)
+theme_override_fonts/font = ExtResource("1_gydc6")
+theme_override_font_sizes/font_size = 256
+text = "x"
+
+[node name="BackButton" type="Button" parent="." unique_id=1884504517]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 638.0
+offset_right = 731.0
+offset_bottom = 915.0
+scale = Vector2(0.58676165, 0.58676165)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gydc6")
+theme_override_font_sizes/font_size = 256
+theme_override_styles/normal = SubResource("StyleBoxFlat_gydc6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m10fq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekj1d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3c2e4")
+text = "<<"
 
 [connection signal="pressed" from="1" to="." method="_on__pressed"]
